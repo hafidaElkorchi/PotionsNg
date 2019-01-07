@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingredients } from '../models/ingredients';
+import { Ingredient } from '../models/ingredient';
 import { ingreds } from '../models/ingreds';
 
 @Component({
@@ -8,7 +8,7 @@ import { ingreds } from '../models/ingreds';
   styleUrls: ['./ingredients.component.css']
 })
 export class IngredientsComponent implements OnInit {
-  ingredList: Ingredients[];
+  ingredList: Ingredient[];
 
 
   constructor() { }

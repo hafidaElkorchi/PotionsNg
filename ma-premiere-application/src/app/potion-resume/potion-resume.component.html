@@ -1,1 +1,18 @@
-<label>{{potion.name}}</label>
+
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">{{potion.name}}</span>
+        <b *ngIf="potion.name == 'Ratatinage'">I'm the Ratatinage</b>
+        <p>{{potion.effect}} </p>
+        <p *ngIf="potion._ingredients.length > 0">le nombre d'ingredients: {{potion._ingredients.length}} </p>
+        
+        
+      </div>
+      <div class="card-action">
+          <a class="waves-effect waves-light btn" (click)="showDetail();">Details</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-export class Ingredients {
+export class Ingredient {
     private _id: number;
     private _name: string;
 

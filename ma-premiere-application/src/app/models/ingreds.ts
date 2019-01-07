@@ -1,10 +1,10 @@
-import { Ingredients } from './ingredients';
+import { Ingredient } from './ingredient';
 
 
-export const ingreds: Ingredients[] = [
-    new Ingredients(1, 'first'),
-    new Ingredients(2, 'second'),
-    new Ingredients(3, 'third'),
-    new Ingredients(4, 'fourth')
+export const ingreds: Ingredient[] = [
+    new Ingredient(1, 'first'),
+    new Ingredient(2, 'second'),
+    new Ingredient(3, 'third'),
+    new Ingredient(4, 'fourth')
 
 ];

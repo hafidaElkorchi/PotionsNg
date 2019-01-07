@@ -1,5 +1,9 @@
 <h3>this is the potions: </h3>
-<div *ngFor="let myPotion of potionList">
-  <app-potion-resume [potion]="myPotion"></app-potion-resume>
+<div class="grid">
+  <div class="row" *ngFor="let myPotion of potionList">
+    <app-potion-resume [potion]="myPotion"></app-potion-resume>
+  </div>
 </div>
-<app-ingredients></app-ingredients>
+
+<app-potion-details></app-potion-details>
+
