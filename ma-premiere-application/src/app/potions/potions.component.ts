@@ -10,6 +10,7 @@ import { PotionsService } from '../services/potions.service';
 })
 export class PotionsComponent implements OnInit, OnDestroy {
   potionList: Potion[];
+  selectedPotion: Potion;
 
   constructor(private _service: PotionsService) { }
 
@@ -19,6 +20,10 @@ export class PotionsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+  }
+
+  showThedetail(potion: Potion) {
+    this.selectedPotion = potion;
   }
 
 }
