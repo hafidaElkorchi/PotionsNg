@@ -2,7 +2,7 @@ export class Ingredient {
     private _id: number;
     private _name: string;
 
-    constructor(id: number, name: string) {
+    constructor(name: string, id: number) {
         this.name = name;
         this.id = id;
     }

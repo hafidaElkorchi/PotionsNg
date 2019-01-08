@@ -8,6 +8,9 @@ import { PotionsComponent } from './potions/potions.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { PotionResumeComponent } from './potion-resume/potion-resume.component';
 import { PotionDetailsComponent } from './potion-details/potion-details.component';
+import { PotionsService } from './services/potions.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -19,10 +22,13 @@ import { PotionDetailsComponent } from './potion-details/potion-details.componen
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    FormsModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PotionsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

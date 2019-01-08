@@ -4,6 +4,7 @@ import { Potion } from '../models/potion';
 import { potions } from '../models/potions';
 import { Ingredient } from '../models/ingredient';
 import { ingreds } from '../models/ingreds';
+import { PotionsService } from '../services/potions.service';
 
 
 
@@ -16,13 +17,18 @@ export class PotionResumeComponent implements OnInit {
   @Input() potion: Potion ;
 
 
-  constructor() {}
+  constructor(private _service: PotionsService) {}
 
   ngOnInit() {
   }
 
   showDetail(potion: Potion): void {
 
+  }
+
+  save(): void {
+    this._service.updatePotion(this.potion).subscribe(myPotion => this.potion = myPotion);
+    // console.log(this.potion.name);
   }
 
 }

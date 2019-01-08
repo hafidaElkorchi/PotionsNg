@@ -1,24 +1,31 @@
 import { Ingredient } from './ingredient';
 
 export class Potion {
+    private _id: number;
     private _name: string;
     private _effect: string;
     private _ingredients: Ingredient[];
 
-    constructor(name: string, effect: string, ingredients: string[]) {
+    constructor(name: string, effect: string, ingredients: Ingredient[]) {
         this.name = name;
         this.effect = effect;
+        this._ingredients = ingredients;
 
-        if (ingredients) {
+        if (!ingredients) {
             this._ingredients = [];
 
-            ingredients.forEach(el => {
-                this._ingredients.push(new Ingredient(0, el));
-            });
+            // ingredients.forEach(el => {
+            //     this._ingredients.push(new Ingredient(el, 0));
+            // });
         }
      }
 
-
+    public get id(): number {
+        return this._id;
+    }
+    public set id(value: number) {
+        this._id = value;
+    }
     public get name(): string {
         return this._name;
     }

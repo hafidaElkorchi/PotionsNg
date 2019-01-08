@@ -1,0 +1,15 @@
+{
+        "name": "Felix felicis",
+        "effect": "chanceux pour une journée",
+        "ingredients": [
+            {
+                "id": 10,
+                "name": "sangsue"
+            },
+            {
+                "id": 11,
+                "name": "pierre de sel"
+            }
+       
+        ] 
+}

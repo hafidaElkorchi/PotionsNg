@@ -2,9 +2,9 @@ import { Ingredient } from './ingredient';
 
 
 export const ingreds: Ingredient[] = [
-    new Ingredient(1, 'first'),
-    new Ingredient(2, 'second'),
-    new Ingredient(3, 'third'),
-    new Ingredient(4, 'fourth')
+    new Ingredient('first', 1),
+    new Ingredient('second', 2),
+    new Ingredient('third', 3),
+    new Ingredient('fourth', 4)
 
 ];

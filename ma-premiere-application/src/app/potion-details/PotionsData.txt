@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Veritaserum",
+        "effect": "oblige à dir le verité",
+        "ingredients": [
+            {
+                "id": 1,
+                "name": "mandragore"
+            },
+    }
+    {
+        "name": "Polynectar",
+        "effect": "changer d'identité",
+        "ingredients": []
+    }
+    {
+        "name": "Felix felicis",
+        "effect": "chanceux pour une journée",
+        "ingredients": [
+            {
+                "id": 10,
+                "name": "sangsue"
+            },
+            {
+                "id": 11,
+                "name": "pierre de sel"
+            }
+       
+        ] 
+    }
+]

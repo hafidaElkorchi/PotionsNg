@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Potion } from '../models/potion';
 import { potions } from '../models/potions';
+import { PotionsService } from '../services/potions.service';
 
 @Component({
   selector: 'app-potions',
@@ -10,10 +11,10 @@ import { potions } from '../models/potions';
 export class PotionsComponent implements OnInit, OnDestroy {
   potionList: Potion[];
 
-  constructor() { }
+  constructor(private _service: PotionsService) { }
 
   ngOnInit() {
-    this.potionList = potions;
+    this._service.getAll().subscribe(list => this.potionList = list);
 
   }
 
