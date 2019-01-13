@@ -13,17 +13,25 @@ export class PotionNewComponent implements OnInit {
 
   @Output() newPotion = new EventEmitter<Potion>();
   potion:Potion
-
-  ingredients:Ingredient[] = ingreds
+  ingredients = []
 
   constructor() { }
 
   ngOnInit() {
-    this.potion = new Potion('','',[])
+    this.potion = new Potion('','',[]);
+    ingreds.forEach(ing => {
+      this.ingredients.push({ ing : ing, pick: false });
+    });
   }
 
   addPotion() {
-    let potion = new Potion(this.potion.name, this.potion.effect, this.potion.ingredients)
+    let ingredients = []
+    this.ingredients.forEach(ing => {
+        if(ing.pick) ingredients.push(ing.ing);
+        ing.pick = false
+    })
+
+    let potion = new Potion(this.potion.name, this.potion.effect, ingredients)
     this.newPotion.emit(potion)
     this.potion = new Potion('','',[])
   }

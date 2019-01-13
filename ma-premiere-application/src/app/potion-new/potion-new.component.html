@@ -8,12 +8,13 @@
         </ul>
         <ul class="collection with-header">
             <li class="collection-header">
-                <h4>Ingredients
-                    <a class="right-align" style="cursor:pointer;" (click)="addIngredient()"><i class="material-icons">add</i></a>
-                </h4>
+                <h4>Ingredients</h4>
             </li>
-            <li *ngFor="let ingredient of potion.ingredients" class="collection-item">
-                <app-ingredient-new [ingredient]="ingredient"></app-ingredient-new>
+            <li *ngFor="let ingredient of ingredients" class="collection-item">
+                <label>
+                    <input type="checkbox" [(ngModel)]="ingredient.pick" />
+                    <span>{{ingredient.ing.name}}</span>
+                  </label>
             </li>
           </ul>
     </div>
