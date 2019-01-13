@@ -6,5 +6,4 @@ export const ingreds: Ingredient[] = [
     new Ingredient('second', 2),
     new Ingredient('third', 3),
     new Ingredient('fourth', 4)
-
 ];

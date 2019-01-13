@@ -10,6 +10,8 @@ import { PotionResumeComponent } from './potion-resume/potion-resume.component';
 import { PotionDetailsComponent } from './potion-details/potion-details.component';
 import { PotionsService } from './services/potions.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PotionNewComponent } from './potion-new/potion-new.component';
+import { IngredientNewComponent } from './ingredient-new/ingredient-new.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     PotionsComponent,
     IngredientsComponent,
     PotionResumeComponent,
-    PotionDetailsComponent
+    PotionDetailsComponent,
+    PotionNewComponent,
+    IngredientNewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<!-- Modal Structure -->
+<div id="potion-new-modal" class="modal">
+    <div class="modal-content">
+      <h4>New Potion</h4>
+        <ul>
+          <li><input type="text" name="name" placeholder="Name of your potion" [(ngModel)]="potion.name"></li>
+          <li><input name="effect" placeholder="Effect of your potion" [(ngModel)]="potion.effect"></li>
+        </ul>
+        <ul class="collection with-header">
+            <li class="collection-header">
+                <h4>Ingredients
+                    <a class="right-align" style="cursor:pointer;" (click)="addIngredient()"><i class="material-icons">add</i></a>
+                </h4>
+            </li>
+            <li *ngFor="let ingredient of potion.ingredients" class="collection-item">
+                <app-ingredient-new [ingredient]="ingredient"></app-ingredient-new>
+            </li>
+          </ul>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a class="modal-close waves-effect waves-green btn-flat" (click)="addPotion()">Create</a>
+    </div>
+  </div>

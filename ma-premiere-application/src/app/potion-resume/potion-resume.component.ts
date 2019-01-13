@@ -6,8 +6,6 @@ import { Ingredient } from '../models/ingredient';
 import { ingreds } from '../models/ingreds';
 import { PotionsService } from '../services/potions.service';
 
-
-
 @Component({
   selector: 'app-potion-resume',
   templateUrl: './potion-resume.component.html',
@@ -16,20 +14,23 @@ import { PotionsService } from '../services/potions.service';
 export class PotionResumeComponent implements OnInit {
   @Input() potion: Potion ;
   @Output() showDetails = new EventEmitter<Potion>();
+  private _service: PotionsService
 
-
-  constructor(private _service: PotionsService) {}
+  constructor(_service: PotionsService) { 
+    this._service = _service;
+  }
 
   ngOnInit() {
   }
 
-  showDetail(potion: Potion): void {
+  showDetail(): void {
     this.showDetails.emit(this.potion);
   }
 
   save(): void {
-    this._service.updatePotion(this.potion).subscribe(myPotion => this.potion = myPotion);
-    // console.log(this.potion.name);
+    this._service.updatePotion(this.potion).subscribe(myPotion => {
+      this.potion = myPotion;
+    });
   }
 
 }

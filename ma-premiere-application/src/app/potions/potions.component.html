@@ -1,9 +1,15 @@
-<h3>this is the potions: </h3>
+<div class="row">
+  <div class="col m12">
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#potion-new-modal">Add Potion</a>
+  </div>
+</div>
 <div class="grid">
   <div class="row" *ngFor="let myPotion of potionList">
-    <app-potion-resume (showDetails)="showThedetail()" [potion]="myPotion"></app-potion-resume>
+    <app-potion-resume (showDetails)="showThedetail($event)" [potion]="myPotion"></app-potion-resume>
   </div>
 </div>
 
 <app-potion-details [potion]="selectedPotion"></app-potion-details>
+<app-potion-new (newPotion)="addPotion($event)"></app-potion-new>
 

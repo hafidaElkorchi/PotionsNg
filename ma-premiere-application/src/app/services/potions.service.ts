@@ -3,6 +3,7 @@ import { Potion } from '../models/potion';
 import { potions } from '../models/potions';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,22 @@ export class PotionsService {
   constructor(private _httpClient: HttpClient) { }
 
   public getAll(): Observable<Potion[]> {
-    const url = 'https://e9ce18a4-365c-48a7-97d8-456c72d4100c.mock.pstmn.io/api/potions';
+    const url = environment.api_url + '/api/potions';
     return this._httpClient.get<Potion[]>(url);
   }
 
+  public addPotion(potion: Potion): Observable<Potion> {
+    const url = environment.api_url + '/api/potions/add';
+    return this._httpClient.post<Potion>(url, potion);
+  }
+
   public updatePotion(potion: Potion): Observable<Potion> {
-    const url2 = 'https://432979dc-894a-4fc7-8610-931acea9ca98.mock.pstmn.io/api/potions';
-    return this._httpClient.put<Potion>(url2, potion);
+    const url = environment.api_url + '/api/potions/update';
+    return this._httpClient.put<Potion>(url, potion);
+  }
+
+  public deletePotion(potion: Potion): Observable<Potion> {
+    const url = environment.api_url + '/api/potions/delete/'+ potion.id;
+    return this._httpClient.delete<Potion>(url);
   }
 }

@@ -16,7 +16,7 @@ export class PotionsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this._service.getAll().subscribe(list => this.potionList = list);
-
+    this.selectedPotion = new Potion('','', [])
   }
 
   ngOnDestroy(): void {
@@ -24,6 +24,10 @@ export class PotionsComponent implements OnInit, OnDestroy {
 
   showThedetail(potion: Potion) {
     this.selectedPotion = potion;
+  }
+
+  addPotion(potion:Potion) {
+    this.potionList.unshift(potion);    
   }
 
 }

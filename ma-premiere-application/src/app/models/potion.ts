@@ -7,17 +7,12 @@ export class Potion {
     private _ingredients: Ingredient[];
 
     constructor(name: string, effect: string, ingredients: Ingredient[]) {
+        this._id = null;
         this.name = name;
         this.effect = effect;
         this._ingredients = ingredients;
 
-        if (!ingredients) {
-            this._ingredients = [];
-
-            // ingredients.forEach(el => {
-            //     this._ingredients.push(new Ingredient(el, 0));
-            // });
-        }
+        if (!ingredients) this._ingredients = [];
      }
 
     public get id(): number {

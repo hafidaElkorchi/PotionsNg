@@ -1,6 +1,21 @@
-<div *ngIf="potion"></div>
-<ul>
-    <li>kjhjk</li>
-    <li>kjhjk</li>
-    <li>kjhjk</li>
-</ul>
+<!-- Modal Structure -->
+<div id="potion-detail-modal" class="modal">
+        <div class="modal-content">
+          <h4>Potion Detail</h4>
+            <ul>
+              <li>Name: {{ potion.name }}</li>
+              <li>Effect: {{ potion.effect }}</li>
+            </ul>
+            <ul *ngIf="potion.ingredients.length > 0" class="collection with-header">
+                <li class="collection-header">
+                    <h4>Ingredients</h4>
+                </li>
+                <li *ngFor="let ingredient of potion.ingredients" class="collection-item">
+                    {{ ingredient.name }}
+                </li>
+              </ul>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-close waves-effect waves-green btn-flat">Ok</a>
+        </div>
+      </div>    
