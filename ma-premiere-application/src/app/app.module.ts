@@ -12,6 +12,7 @@ import { PotionsService } from './services/potions.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PotionNewComponent } from './potion-new/potion-new.component';
 import { IngredientNewComponent } from './ingredient-new/ingredient-new.component';
+import { IngredientsService } from 'src/app/services/ingredients.service';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { IngredientNewComponent } from './ingredient-new/ingredient-new.componen
     HttpClientModule
   ],
   providers: [
-    PotionsService
+    PotionsService,
+    IngredientsService
   ],
   bootstrap: [AppComponent]
 })

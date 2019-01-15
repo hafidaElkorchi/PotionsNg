@@ -18,8 +18,8 @@ export class PotionsService {
   }
 
   public addPotion(potion: Potion): Observable<Potion> {
-    const url = environment.api_url + '/api/potions/add';
-    return this._httpClient.post<Potion>(url, potion);
+    const url = environment.api_url + '/api/potions';
+    return this._httpClient.post<Potion>(url, {name:potion.name, effect:potion.effect});
   }
 
   public updatePotion(potion: Potion): Observable<Potion> {

@@ -1,8 +1,9 @@
 import { Component, Output, Input, OnInit } from '@angular/core';
 import { Potion } from 'src/app/models/potion';
 import { EventEmitter } from '@angular/core';
-import { ingreds } from 'src/app/models/ingreds';
+//import { ingreds } from 'src/app/models/ingreds';
 import { Ingredient } from 'src/app/models/ingredient';
+import { IngredientsService } from 'src/app/services/ingredients.service';
 
 @Component({
   selector: 'app-potion-new',
@@ -15,12 +16,16 @@ export class PotionNewComponent implements OnInit {
   potion:Potion
   ingredients = []
 
-  constructor() { }
+  constructor(private _service: IngredientsService) { }
 
   ngOnInit() {
     this.potion = new Potion('','',[]);
-    ingreds.forEach(ing => {
-      this.ingredients.push({ ing : ing, pick: false });
+    
+    this._service.getAll().subscribe(ingreds => {
+      console.log(ingreds)
+      ingreds.forEach(ing => {
+        this.ingredients.push({ ing : ing, pick: false });
+      })
     });
   }
 
