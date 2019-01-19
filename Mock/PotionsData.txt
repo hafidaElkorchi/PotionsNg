@@ -1,6 +1,7 @@
-[
+﻿[
     {
-        "name": "Veritaserum",
+	"id": 1;        
+	"name": "Veritaserum",
         "effect": "oblige à dir le verité",
         "ingredients": [
             {
@@ -9,12 +10,14 @@
             },
     },
     {
+	"id": 2;   
         "name": "Polynectar",
         "effect": "changer d'identité",
         "ingredients": []
     },
     {
-        "name": "Felix felicis",
+      	"id": 3;   
+	"name": "Felix felicis",
         "effect": "chanceux pour une journée",
         "ingredients": [
             {

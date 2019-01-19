@@ -262,6 +262,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Web.config.dist" />
+    <None Include="Web.config.Debug.dist">
+      <DependentUpon>Web.config.dist</DependentUpon>
+    </None>
+    <None Include="Web.config.Release.dist">
+      <DependentUpon>Web.config.dist</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
